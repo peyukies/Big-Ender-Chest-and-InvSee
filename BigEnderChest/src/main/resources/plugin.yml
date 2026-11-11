@@ -1,0 +1,21 @@
+name: BigEnderChest
+version: 1.1.0
+main: com.example.bigenderchest.BigEnderChest
+api-version: '26.3'
+author: you
+description: Ender sandığını 2 sandık (54 slot) boyutuna çıkarır.
+commands:
+  enderchest:
+    description: Büyük ender sandığını açar (admin - başka oyuncununkini)
+    usage: /<command> [oyuncu]
+    aliases: [ec, echest]
+permissions:
+  bigenderchest.use:
+    description: Büyük ender sandığını kullanabilir
+    default: true
+  bigenderchest.admin:
+    description: /enderchest <oyuncu> ile başkalarının sandığını açabilir
+    default: op
+  bigenderchest.admin.edit:
+    description: Başkasının sandığını açınca eşyaları değiştirebilir (yoksa sadece izler)
+    default: op

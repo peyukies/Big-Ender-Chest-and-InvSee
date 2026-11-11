@@ -1,0 +1,21 @@
+name: InvSee
+version: 1.0.0
+main: com.example.invsee.InvSee
+api-version: '26.3'
+author: you
+description: Adminlerin çevrimiçi oyuncuların envanterini canlı görmesini sağlar.
+commands:
+  invsee:
+    description: Bir oyuncunun envanterini açar
+    usage: /<command> <oyuncu>
+    aliases: [inv, envanter]
+permissions:
+  invsee.use:
+    description: /invsee ile envanter izleyebilir
+    default: op
+  invsee.edit:
+    description: Envanteri izlerken eşyaları değiştirebilir (yoksa sadece izler)
+    default: op
+  invsee.exempt:
+    description: Bu yetkiye sahip oyuncuların envanterine bakılamaz
+    default: false
