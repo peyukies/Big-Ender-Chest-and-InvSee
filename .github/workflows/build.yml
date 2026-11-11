@@ -1,0 +1,25 @@
+name: Build plugins
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plugin: [BigEnderChest, InvSee]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Build
+        run: mvn -B package
+        working-directory: ${{ matrix.plugin }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.plugin }}
+          path: ${{ matrix.plugin }}/target/*.jar
